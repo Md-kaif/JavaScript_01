@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title></title>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+
+        <style>
+            *{margin: 0px auto;}
+            .box{height: 530px;width: 450px;background: rgb(0, 0, 0);margin-top: 30px;font-family: poppins;}
+            h1{color: #fff;text-align: center;}
+            input[type='text']{height: 40px;width: 350px;margin-left: 54px;font-size: 18px;}
+            input[type='button']{margin-left: 10px;height: 40px;width: 55px;font-size: 22px;}
+            input[type='button']:hover{cursor: pointer;;}
+            #result{height: 40px;width: 350px;margin-left: 54px;font-size: 25px;background: #fff;text-align: center;}
+        </style>
+    </head>
+    <body bgcolor="skyblue">
+
+        <div class="box" id="boxx">
+        
+           <center> <img src="01.gif" height="230px" width="90%" style="margin-top: 20px"></center>
+            <input type="text" placeholder="Enter any number 1 to 100." style="margin-top: 80px;" id="userNum"><br><br>
+            <div  id="result"></div> <br><br>
+            <input type="button" value="Go" onclick="guess()" style="margin-left: 280px;">
+            <input type="button" value="PlayAgain" id="again" onclick="window.location.reload(true)">
+        </div> 
+
+
+<script>
+    var output = document.getElementById('result');
+    var output2 = document.getElementById('boxx');
+     var compNum = Math.floor(Math.random()*100);
+    function guess()
+    {
+        var userNum = parseInt(document.getElementById("userNum").value);
+       
+        if(userNum == compNum)
+        {
+            output.innerHTML="WOOHOO...ITS RIGHT...";
+            output.style.color="white";
+            output.style.background="green";
+            output2.style.boxShadow="0px 0px 50px green";
+            
+        }
+        else if(userNum > compNum)
+        {
+            output.innerHTML="IT'S TOO HIGH....";
+            output.style.color="white";
+            output.style.background="red";
+            output2.style.boxShadow="0px 0px 50px red";
+        
+        }
+        else
+        {
+            output.innerHTML="IT'S TOO LOW...";
+            output.style.color="white";
+            output.style.background="red";
+            output2.style.boxShadow="0px 0px 50px red";
+        
+        }
+        console.log(compNum);
+        
+
+    }
+ 
+</script>
+    </body>
+</html>
